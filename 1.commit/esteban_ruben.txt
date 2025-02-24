@@ -1,0 +1,12 @@
+1.Para inicializar un repositorio Git en un directorio local, se usa: git init
+2.Para que un directorio deje de estar bajo control de Git, debes eliminar la carpeta .git con: rm -rf .git
+3. si aun no se lo a agregado con Git add, Git no lo considera parte del repositorio hasta que se lo agrega con git add. Puedes verificarlo con: git status
+4.Para agregar un archivo específico al área de preparación (staging area) git add nombre-del-archivo pero si se quiere agregar todos los archivos modificados se utiliza git add .
+
+5. Para ver qué archivos han sido modificados o agregados antes de hacer un commit, usa: git status
+También puedes ver exactamente qué cambios se hicieron en los archivos con: git diff
+
+6.Para registrar los cambios en el historial de Git, se usa: git commit -m "Mensaje del commit"
+
+¿qué es un commit?
+Un commit es un punto de guardado en la historia de un proyecto en Git. Cada commit almacena los cambios realizados hasta ese momento, junto con un mensaje que describe lo que se hizo. Es como una foto del estado actual del proyecto, permitiendo regresar a versiones anteriores si es necesario.
