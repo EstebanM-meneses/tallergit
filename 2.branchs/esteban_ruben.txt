@@ -38,3 +38,146 @@ Un tag (etiqueta) es un marcador que se usa para identificar versiones específi
 git tag nombre-del-tag
 
 -------------------------------------PRACTICA-------------------------------------------------------------
+1.Crear una branch experimento. (Puede usar el comando git branch experimento main)
+2.moverme a la rama experimento 
+$ git checkout experimento
+Switched to branch 'experimento'
+
+3.verificar si estamos en la rama 
+ git branch
+  esteban_meneses_ruben_jimenez
+* experimento
+  main
+  practica2025
+
+4.Agregarle el condimento albahaca arriba del queso al archivo 2.branchs/pizza.txt y "commitee" los cambios.
+$ git  commit -m "añadiendo albahaca a el archivo pizza"
+[experimento d1cd1d8] añadiendo albahaca a el archivo pizza
+ 1 file changed, 1 insertion(+)
+
+5.Agregarle el condimento oregano arriba de la albahaca al archivo 2.branchs/pizza.txt y "commitee" los cambios.
+$ git commit -m "se agrego el condimento oregano"
+[experimento 1c6b164] se agrego el condimento oregano
+ 1 file changed, 1 insertion(+)
+
+6 Correr el comando git graph y observar el resultado. ¿Qué observa?
+El comando git graph muestra el historial del repositorio en forma de árbol.
+
+7. moverse a la rama main
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+8 Crear una branch anana. (Puede usar el comando git checkout -b anana).
+$ git checkout -b anana
+Switched to a new branch 'anana'
+
+9 Agregarle el condimento anana debajo del queso al archivo 2.branchs/pizza.txt y "commitee" los cambios.
+$ git commit -m "se agrego el condimento anana"
+[anana 160f4f4] se agrego el condimento anana
+ 1 file changed, 1 insertion(+)
+
+10 Correr el comando git graph y observar el resultado. ¿Qué observa?
+se observa los cambios en forma de árbol pero ahora la rama anana tiene un commit donde se agrego el condimento anana
+
+11Vuelva a la branch main.
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+12 Agregue el condimento cebolla debajo de la salsa al archivo 2.branchs/pizza.txt y "commitee" los cambios.
+$ git commit -m "se agrego el condimento cebolla"
+[main 56a8bb5] se agrego el condimento cebolla
+ 1 file changed, 1 insertion(+)
+
+13 Correr el comando git graph y observar el resultado. ¿Qué observa?
+el historial muestra diferentes ramas con modificaciones en archivos de recetas, algunas de las cuales aún no han sido fusionadas en main
+
+14 Haga un merge de la branch anana a la branch main. (Puede usar el comando git merge anana).
+git merge anana
+
+15visualizando los resultados con git graph
+se observa que se a creado una relación entre estas como si pareciera una rama
+
+16¿Qué branches están "mergeadas" a main? (Puede usar el comando git branch --merged).
+$ git branch --merged
+  anana
+* main
+  practica2025
+
+17 Haga un merge de la branch experimento a la branch main. (Puede usar el comando git merge experimento).
+$ git merge experimento
+Auto-merging 2.branchs/pizza.txt
+CONFLICT (content): Merge conflict in 2.branchs/pizza.txt
+Automatic merge failed; fix conflicts and then commit the result.   dice que hay un conflicto no pueded ser fusionadas
+
+18 Correr el comando git graph y observar el resultado. ¿Qué observa?
+no se observan cambios por que git no hiso automáticamente el merge  
+
+19 ¿Tuvo que hacer un merge manual, o git lo hizo automáticamente? ¿Por qué?
+
+si se tuvo que hacer un merge manual por que git tiene conflictos por fusión entre las ramas
+
+20 Qué branches están "mergeadas" a main? (Puede usar el comando git branch --merged).
+$ git branch --merged
+  anana
+  experimento
+* main
+  practica2025
+
+21 Elimine la branch anana. (Puede usar el comando git branch -d anana).
+$ git branch -d anana
+Deleted branch anana (was 160f4f4).
+
+22. Elimine la branch experimento. (Puede usar el comando git branch -d experimento).
+$ git branch -d experimento
+Deleted branch experimento (was 1c6b164).
+
+23 ¿Qué branches están "mergeadas" a main? (Puede usar el comando git branch --merged).
+
+$ git branch --merged
+* main
+  practica2025
+
+24 Correr el comando git graph y observar el resultado. ¿Qué observa?
+se observa el resumen de todos los cambio en forma de árbol pero ya no se muestran las eliminadas
+
+25 Crear un tag pizza en el último commit. (Puede usar el comando git tag -a pizza -m "Receta de la pizza."").
+$ git tag -a pizza -m "Receta de la pizza."
+
+26 Ver los tags creados. (Puede usar el comando git tag).
+$ git tag
+pizza
+
+27 Ver el tag pizza. (Puede usar el comando git show pizza)
+tag pizza
+Tagger: meneses esteban , ruben jimenez <tevan0304@gmail.com>
+Date:   Mon Feb 24 22:31:54 2025 -0500
+
+Receta de la pizza.
+
+commit 6371b759f73a69859ec400e31d4c5d003d6dd3cf (HEAD -> main, tag: pizza)
+Merge: 6f43bf9 1c6b164
+Author: meneses esteban , ruben jimenez <tevan0304@gmail.com>
+Date:   Mon Feb 24 22:23:19 2025 -0500
+
+    solucion del conflicto merge
+
+diff --cc 2.branchs/pizza.txt
+index 447ac1b,b523cb9..c710f05
+--- a/2.branchs/pizza.txt
++++ b/2.branchs/pizza.txt
+@@@ -1,5 -1,5 +1,7 @@@
+ +anana
++ oregano
++ albahaca
+  queso
+  salsa de tomate
+ -masa de pizza
+ +cebolla
+- masa de pizza
+++masa de pizza
+
+finalizado
+
+
