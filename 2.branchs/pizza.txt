@@ -1,4 +1,6 @@
 anana
+oregano
+albahaca
 queso
 salsa de tomate
 cebolla

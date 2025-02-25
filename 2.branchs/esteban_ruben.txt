@@ -1,0 +1,40 @@
+¿Qué es un branch?
+Un branch (rama) es una línea de desarrollo independiente dentro de un repositorio de Git.
+¿Por qué pueden ser útiles los branches?
+Permiten trabajar en nuevas características o correcciones sin afectar la rama principal, facilitando el desarrollo en equipo.
+
+¿Cómo se crea una branch?
+git branch nombre-de-la-rama
+ ¿Cómo se cambia a una branch?
+
+git checkout nombre-de-la-rama
+o en versiones recientes:
+git switch nombre-de-la-rama
+
+¿Cómo se elimina una branch?
+Si la rama no está en uso:
+git branch -d nombre-de-la-rama
+Para forzar la eliminación:
+git branch -D nombre-de-la-rama
+
+¿Cómo se crea una branch y se cambia a ella en un solo paso?
+git checkout -b nombre-de-la-rama
+git switch -c nombre-de-la-rama
+
+¿Qué es un merge?
+Es la acción de combinar cambios de una rama en otra.
+
+¿Cómo se realiza un merge?
+Primero, cambia a la rama donde quieres fusionar:
+git checkout rama-destino
+
+Luego, haz el merge:
+git merge rama-origen
+
+¿Qué es un tag?
+Un tag (etiqueta) es un marcador que se usa para identificar versiones específicas en el historial de Git.
+
+¿Cómo se crea un tag?
+git tag nombre-del-tag
+
+-------------------------------------PRACTICA-------------------------------------------------------------
